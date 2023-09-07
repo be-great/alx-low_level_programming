@@ -11,5 +11,5 @@ int main(void)
 	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
 	write(STDOUT_FILENO, str, sizeof(str) - 1);
-	return (0);
+	return (1);
 }
