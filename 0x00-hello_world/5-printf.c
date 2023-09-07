@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*
+/**
  * main - Entry point
  * Description: Display a String using printf function
  * Return: Always 0 (Success)
