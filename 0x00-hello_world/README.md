@@ -4,4 +4,4 @@
    puts
    putchar
 # Concepts: 
-- steps takes to creat the exe file, simple c code
+- steps takes to create the exe file and simple c code
