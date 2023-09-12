@@ -1,5 +1,5 @@
 #include "main.h"
-#include "_putchar.h"
+
 /**
  * _islower - function that checks for lowercase character
  * @c: character to test
