@@ -1,5 +1,5 @@
-#include <stdio.h>
-
+#include "main.h"
+#include "_putchar.h"
 /**
  * print_alphabet - print alphabet number in lowercase
  */
@@ -9,21 +9,9 @@ void print_alphabet(void)
 
 	while (alph <= 'z')
 	{
-		putchar(alph);
+		_putchar(alph);
 		alph++;
 
 	}
-	putchar('\n');
-}
-
-/**
- * main - Entry point
- * Discription: simple display script putchar
- * Return: 0 success
- */
-
-int main(void)
-{
-	print_alphabet();
-	return (0);
+	_putchar('\n');
 }
