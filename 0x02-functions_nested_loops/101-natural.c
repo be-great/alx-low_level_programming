@@ -9,17 +9,12 @@ int main(void)
 {
 	int sum = 0;
 	int i = 0;
-	int j = 0;
 
-	while ((i * 5) < 1024)
+	while (i < 1024)
 	{
-		sum += i * 5;
+		if (i % 3 == 0 || i % 5 == 0)
+			sum += i;
 		i++;
-	}
-	while ((j * 3) < 1024)
-	{
-		sum += j * 3;
-		j++;
 	}
 	printf("%d\n", sum);
 	return (0);
