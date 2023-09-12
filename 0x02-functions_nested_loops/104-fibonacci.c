@@ -1,27 +1,52 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
- * main - Entry point
- * Return: 0 always (success)
+ * main - program that finds and prints the first 98 Fibonacci numbers,
+ * starting with 1 and 2, followed by a new line.
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	unsigned long n0 = 1;
-	unsigned long n1 = 2;
-	int i = 3;
+	int count = 0;
+	unsigned long fi1 = 0, fi2 = 1, sum;
+	unsigned long fi1_left, fi1_right, fi2_left, fi2_right;
+	unsigned long left, right;
 
-	printf("%lu, %lu, ", n0, n1);
-	while (i <= 98)
+	while (count < 92)
 	{
-		unsigned long n3 = n1 + n0;
+		sum = fi1 + fi2;
+		printf("%lu, ", sum);
 
-		n0 = n1;
-		n1 = n3;
-		printf("%lu", n3);
-		if (i != 98)
+		fi1 = fi2;
+		fi2 = sum;
+		count++;
+	}
+
+	fi1_left = fi1 / 10000000000;
+	fi2_left = fi2 / 10000000000;
+	fi1_right = fi1 % 10000000000;
+	fi2_right = fi2 % 10000000000;
+
+	count = 93;
+	while (count < 99)
+	{
+		left = fi1_left + fi2_left;
+		right = fi1_right + fi2_right;
+		if (fi1_right + fi2_right > 9999999999)
+		{
+			left += 1;
+			right %= 10000000000;
+		}
+
+		printf("%lu%lu", left, right);
+		if (count != 98)
 			printf(", ");
-		i++;
+
+		fi1_left = fi2_left;
+		fi1_right = fi2_right;
+		fi2_left = left;
+		fi2_right = right;
+		count++;
 	}
 	printf("\n");
 	return (0);
