@@ -13,7 +13,7 @@ int main(void)
 
         i = 0;
         /* increament the i missing*/
-        while (i < 10)
+        while (i != 0)
         {
                 putchar(i);
         }
