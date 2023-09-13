@@ -5,6 +5,7 @@
 
 /**
  * positive_or_negative - Entry point
+ * @i: the number to check
  * Description: compare number with 0 using if_else
  */
 void positive_or_negative(int i)
