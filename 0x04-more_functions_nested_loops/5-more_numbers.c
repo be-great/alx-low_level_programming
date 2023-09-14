@@ -1,35 +1,31 @@
 #include "main.h"
 
 /**
- * print_square - function that prints a square
+ * more_numbers - function that prints a numbers from 0-14
  * followed by a new line.
- * @size: size of the triangle
  */
 
-void print_square(int size)
+void more_numbers(void)
 {
 	int i = 0;
-	int hash = 0;
+	int j = 0;
 
-	if (size <= 0)
+	while (j < 10)
 	{
-		_putchar('\n');
-		return;
-	}
-
-	while (i < size)
-	{
-
-		/* print the # it's normal for loop */
-		while (hash < size)
+		while (i < 15)
 		{
-			_putchar('#');
-			hash++;
+			if (i / 10 == 0)
+				_putchar(i + '0');
+			else
+			{
+				_putchar(i / 10 + '0');
+				_putchar(i % 10 + '0');
+			}
+			i++;
 		}
 		_putchar('\n');
-		hash = 0;
-		i++;
+		i = 0;
+		j++;
 	}
-
 
 }
