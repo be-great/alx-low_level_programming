@@ -1,35 +1,15 @@
 #include "main.h"
 
 /**
- * print_square - function that prints a square
- * followed by a new line.
- * @size: size of the triangle
+ * mul - function that multiplies two integers.
+ * @a: first number
+ * @b: second number
+ * Return: the result of multiplies
  */
 
-void print_square(int size)
+int mul(int a, int b)
 {
-	int i = 0;
-	int hash = 0;
+	int result = a * b;
 
-	if (size <= 0)
-	{
-		_putchar('\n');
-		return;
-	}
-
-	while (i < size)
-	{
-
-		/* print the # it's normal for loop */
-		while (hash < size)
-		{
-			_putchar('#');
-			hash++;
-		}
-		_putchar('\n');
-		hash = 0;
-		i++;
-	}
-
-
+	return (result);
 }
