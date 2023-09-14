@@ -1,35 +1,26 @@
 #include "main.h"
 
 /**
- * print_square - function that prints a square
+ * print_line - function that prints a line
  * followed by a new line.
- * @size: size of the triangle
+ * @n: number of iteration
  */
 
-void print_square(int size)
+void print_line(int n)
 {
 	int i = 0;
-	int hash = 0;
 
-	if (size <= 0)
+	if (n <= 0)
 	{
 		_putchar('\n');
 		return;
 	}
 
-	while (i < size)
+	while (i < n)
 	{
-
-		/* print the # it's normal for loop */
-		while (hash < size)
-		{
-			_putchar('#');
-			hash++;
-		}
-		_putchar('\n');
-		hash = 0;
+		_putchar('_');
 		i++;
 	}
-
+	_putchar('\n');
 
 }
