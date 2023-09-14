@@ -1,35 +1,15 @@
 #include "main.h"
 
 /**
- * print_square - function that prints a square
- * followed by a new line.
- * @size: size of the triangle
+ * _isupper - function that check for upper characters.
+ * @c: the value to check
+ * Return: 1 if ture , 0 if false
  */
 
-void print_square(int size)
+int _isupper(int c)
 {
-	int i = 0;
-	int hash = 0;
+	if (c >= 65 && c <= 90)
+		return (1);
 
-	if (size <= 0)
-	{
-		_putchar('\n');
-		return;
-	}
-
-	while (i < size)
-	{
-
-		/* print the # it's normal for loop */
-		while (hash < size)
-		{
-			_putchar('#');
-			hash++;
-		}
-		_putchar('\n');
-		hash = 0;
-		i++;
-	}
-
-
+	return (0);
 }
