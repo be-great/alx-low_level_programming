@@ -1,13 +1,15 @@
 #include <stdio.h>
+#include <math.h>
 
 /**
- * main - Entry point
+ * largest_prime_factor - prints the largest prime factor
+ * of the number 612852475143
+ * @num: number to check
  * Discription: find the largest primt factor of 612852475143
- * Return: always 0 (Success)
  */
-int main(void)
+
+void largest_prime_factor(unsigned long num)
 {
-	unsigned long num = 612852475143;
 	unsigned long i = 2;
 
 	while (i * i <= num)
@@ -19,5 +21,17 @@ int main(void)
 	}
 
 	printf("%lu\n", i);
+}
+
+/**
+ * main - Entry point
+ * Discription: find the largest primt factor of 612852475143
+ * Return: always 0 (Success)
+ */
+
+int main(void)
+{
+	largest_prime_factor(612852475143);
 	return (0);
 }
+
