@@ -1,35 +1,19 @@
 #include "main.h"
 
 /**
- * print_square - function that prints a square
+ * print_numbers - function that prints number from 0-9
  * followed by a new line.
- * @size: size of the triangle
  */
 
-void print_square(int size)
+void print_numbers(void)
 {
-	int i = 0;
-	int hash = 0;
+	int j = 0;
 
-	if (size <= 0)
+	while (j < 10)
 	{
-		_putchar('\n');
-		return;
+		_putchar(j + '0');
+		j++;
 	}
-
-	while (i < size)
-	{
-
-		/* print the # it's normal for loop */
-		while (hash < size)
-		{
-			_putchar('#');
-			hash++;
-		}
-		_putchar('\n');
-		hash = 0;
-		i++;
-	}
-
+	_putchar('\n');
 
 }
