@@ -1,35 +1,15 @@
 #include "main.h"
 
 /**
- * print_square - function that prints a square
- * followed by a new line.
- * @size: size of the triangle
+ * _isdigit - function that check for digit numbers.
+ * @c: the value to check
+ * Return: 1 if ture , 0 if false
  */
 
-void print_square(int size)
+int _isdigit(int c)
 {
-	int i = 0;
-	int hash = 0;
+	if (c >= 48 && c <= 57)
+		return (1);
 
-	if (size <= 0)
-	{
-		_putchar('\n');
-		return;
-	}
-
-	while (i < size)
-	{
-
-		/* print the # it's normal for loop */
-		while (hash < size)
-		{
-			_putchar('#');
-			hash++;
-		}
-		_putchar('\n');
-		hash = 0;
-		i++;
-	}
-
-
+	return (0);
 }
