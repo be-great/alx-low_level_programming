@@ -1,14 +1,23 @@
 #include "main.h"
 
 /**
- * _islower - function that checks for lowercase character
- * @c: character to test
- * Return: 1 if char in lowercase , 0 if not
+ * puts2 - function that print the even part
+ * @str: string to check
  */
 
-void puts2(char *str);
+void puts2(char *str)
 {
-	if (c >= 97 && c <= 122)
-		return (1);
-	return (0);
+	int i = 0;
+	int len;
+
+	len = strlen(str);
+	while (i < len)
+	{
+		if (i % 2 == 0)
+			_putchar(str[i]);
+
+		i++;
+	}
+	_putchar('\n');
+
 }
