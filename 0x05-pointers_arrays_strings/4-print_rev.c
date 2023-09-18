@@ -1,14 +1,40 @@
 #include "main.h"
 
 /**
- * _islower - function that checks for lowercase character
- * @c: character to test
- * Return: 1 if char in lowercase , 0 if not
+ * print_rev - function that prints a string
+ * in reverse followed by \n
+ * @s: character to test
  */
 
-void print_rev(char *s);
+void print_rev(char *s)
 {
-	if (c >= 97 && c <= 122)
-		return (1);
-	return (0);
+	/**Declarations*/
+	int len;
+	int start;
+	int end;
+	char *revarr;
+
+	if (!s)
+	{
+	return;
+	}
+
+	/**initlization*/
+	len = strlen(s);
+	start = 0;
+	end = len - 1;
+	revarr = (char *)malloc((len + 1) * sizeof(char));
+	strcpy(revarr, s);
+	while (start < end)
+	{
+		/* swap the each end of string with each of the begging*/
+		char temp = revarr[start];
+
+		revarr[start] = revarr[end];
+		revarr[end] = temp;
+		start++;
+		end--;
+	}
+	puts(revarr);
+	free(revarr);
 }
