@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * _islower - function that checks for lowercase character
- * @c: character to test
- * Return: 1 if char in lowercase , 0 if not
+ * swap_int - swap two integers by there pointer
+ * @a: number one
+ * @b: number two
  */
 
-void swap_int(int *a, int *b);
+void swap_int(int *a, int *b)
 {
-	if (c >= 97 && c <= 122)
-		return (1);
-	return (0);
+	int c = *b;
+	*b = *a;
+	*a = c;
 }
