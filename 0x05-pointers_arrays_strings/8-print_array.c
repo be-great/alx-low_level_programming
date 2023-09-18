@@ -1,14 +1,22 @@
 #include "main.h"
 
 /**
- * _islower - function that checks for lowercase character
- * @c: character to test
- * Return: 1 if char in lowercase , 0 if not
+ * print_array -  prints n elements of an array of integers.
+ * @a: the string
+ * @n:the n elements
  */
 
-void print_array(int *a, int n);
+void print_array(int *a, int n)
 {
-	if (c >= 97 && c <= 122)
-		return (1);
-	return (0);
+	int i = 0;
+
+	while (i  < n)
+	{
+		printf("%d", a[i]);
+		if (i != (n - 1))
+			printf(", ");
+		i++;
+	}
+	printf("\n");
+
 }
