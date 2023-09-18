@@ -1,14 +1,11 @@
 #include "main.h"
-
+#include <string.h>
 /**
- * _islower - function that checks for lowercase character
- * @c: character to test
- * Return: 1 if char in lowercase , 0 if not
+ * _strlen - return the length of giving string
+ * @s: string to check
  */
 
-int _strlen(char *s);
+int _strlen(char *s)
 {
-	if (c >= 97 && c <= 122)
-		return (1);
-	return (0);
+	return (strlen(s));
 }
