@@ -1,14 +1,25 @@
 #include "main.h"
 
 /**
- * _islower - function that checks for lowercase character
- * @c: character to test
- * Return: 1 if char in lowercase , 0 if not
+ * puts_half - function that prints half of a string, followed by a new line
+ * @str: string to print half
  */
 
-void puts_half(char *str);
+void puts_half(char *str)
 {
-	if (c >= 97 && c <= 122)
-		return (1);
-	return (0);
+	int start;
+	int len;
+
+	len = strlen(str);
+	if (len % 2 != 0)
+		start = ((len - 1) / 2);
+	else
+		start = (len / 2);
+	while (start <= len - 1)
+	{
+		_putchar(str[start]);
+		start++;
+	}
+	_putchar('\n');
+
 }
