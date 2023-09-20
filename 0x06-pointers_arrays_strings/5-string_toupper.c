@@ -1,12 +1,22 @@
 #include <stdio.h>
 /**
- * function_name - Entry point
- * @value1:
- * Return: number
+ * *string_toupper - function that changes all lowercase letters
+ * of a string to uppercase.
+ * @str: the string to convert
+ * Return: pointer of str
  */
 
-type function_name(int value1)
+char *string_toupper(char *str)
 {
-        return (0);
+	/* char *ptr = str;*/
+
+	while (*str != '\0')
+	{
+		if (*str >= 97 && *str <= 122)
+			*str = (int)*str - 32;
+		str++;
+	}
+
+	return (ptr);
 }
 

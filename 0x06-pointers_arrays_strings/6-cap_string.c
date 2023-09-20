@@ -1,12 +1,17 @@
 #include <stdio.h>
+
 /**
- * function_name - Entry point
- * @value1:
- * Return: number
+ * *cap_string - function that cap words after some char
+ * Desciption: capitalize words after 
+ * {' ','\n',',', ';','?','!','\t','{','}'}
+ * @str: the string 
+ * Return: 
  */
 
-type function_name(int value1)
+char *cap_string(char *str)
 {
-        return (0);
+            
+        return (str);
+
 }
 
