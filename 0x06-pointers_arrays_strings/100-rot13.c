@@ -17,7 +17,7 @@ char *rot13(char *str)
 	while (*str)
 	{
 		/*search the character in alph0*/
-		while (i <= 26)
+		while (i < 26)
 		{
 			/* check the char capital or small */
 			if (islower(*str))
