@@ -1,12 +1,32 @@
 #include <stdio.h>
 /**
- * function_name - Entry point
- * @value1:
- * Return: number
+ * *leet - encode string into 1337
+ * @str: string to encode
+ * Return: pointer of str
  */
 
-type function_name(int value1)
+char *leet(char *str)
 {
-        return (0);
+	char *ptr = str;
+	char keys[] = {'a', 'e', 'o', 't', 'l'};
+	char values[] = {'4', '3', '0', '7', '1'};
+	int lenkey = 5;
+	int i = 0;
+
+	while (*str)
+	{
+		while (i < lenkey)
+		{
+			if (*str == keys[i] || *str == keys[i] - 32)
+			{
+
+				*str = values[i];
+			}
+			i++;
+		}
+	str++;
+	i = 0;
+	}
+	return (ptr);
 }
 
