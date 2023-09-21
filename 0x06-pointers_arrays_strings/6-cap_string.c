@@ -8,10 +8,10 @@
 int checksap(char c)
 {
 
-	char sap[] = " \t\n;.,!?\"(){}";
+	char sap[] = " \t\n,.!?\"(){}";
 	int i = 0;
 
-	while (i < 15)
+	while (i < 12)
 	{
 		if (c == sap[i])
 		{
@@ -21,17 +21,7 @@ int checksap(char c)
 	}
 	return (0);
 }
-/**
- * islowerc - check if letter is small
- * @c: char to check
- * Return: 1 if true else 0
- */
-int islowerc(char c)
-{
-	if (c >= 97 && c <=  122)
-		return (1);
-	return (0);
-}
+
 /**
  * *cap_string - captialize the first letter of word
  * after a saperater
@@ -42,12 +32,13 @@ char *cap_string(char *str)
 {
 
 	int prevoiusvalue = 0;
+	char *ptr = str;
 
 	while (*str)
 	{
 		if (checksap(*str))
 			prevoiusvalue = 1;
-		else if (islowerc(*str) && prevoiusvalue)
+		else if (islower(*str) && prevoiusvalue)
 		{
 			*str -= 32;
 			prevoiusvalue = 0;
@@ -57,6 +48,6 @@ char *cap_string(char *str)
 
 		str++;
 	}
-	return (str);
+	return (ptr);
 
 }
