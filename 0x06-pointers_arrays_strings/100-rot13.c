@@ -8,8 +8,8 @@
 char *rot13(char *str)
 {
 	/* remember the capital -32*/
-	char alph0[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char alph13rot[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	char alph0[] = "abcdefghijklmnopqrstuvwxyz";
+	char alph13rot[] = "nopqrstuvwxyzabcdefghijklm";
 	char *ptr = str;
 	int i = 0;
 
