@@ -31,7 +31,7 @@ int checksap(char c)
 char *cap_string(char *str)
 {
 
-	int prevoiusvalue = 0;
+	int prevoiusvalue = 1;
 	char *ptr = str;
 
 	while (*str)
