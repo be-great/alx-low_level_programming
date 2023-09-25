@@ -11,8 +11,11 @@ int _atoi(char *s)
 
 	int sig = 1;
 	unsigned int number = 0;
+	int y = 0;
+	int *p =&y; 
 	/*int i = 0;*/
-	do {
+	while (*s != '\0')
+	{
 		if (*s == '-')
 			sig = sig * -1;
 		else if (*s >= '0' && *s <= '9')
@@ -21,6 +24,8 @@ int _atoi(char *s)
 		}
 		else if (number > 0)
 			break;
-	} while (*s++);
+		s++;
+		printf("hello :%d\n", *p =*p +1);
+	}
 	return (number * sig);
 }
