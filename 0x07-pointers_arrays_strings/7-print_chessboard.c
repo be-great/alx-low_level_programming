@@ -1,12 +1,25 @@
-#include <stdio.h>
+#include "main.h"
+
 /**
- * function_name - Entry point
- * @value1:
- * Return: number
+ * print_chessboard - prints a chessboard (2d) array
+ * @a: the 2d array
  */
 
-type function_name(int value1)
+void print_chessboard(char (*a)[8])
 {
-        return (0);
+	int i = 0;
+	int j = 0;
+
+	while (i < 8)
+	{
+		while (j < 8)
+		{
+			_putchar(a[i][j]);
+			j++;
+		}
+		_putchar('\n');
+		j = 0;
+		i++;
+	}
 }
 
