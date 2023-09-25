@@ -1,12 +1,23 @@
 #include <stdio.h>
 /**
- * function_name - Entry point
- * @value1:
- * Return: number
+ * *_memcpy - Entry point
+ * @dest: to
+ * @src: from
+ * @n: number of bytes to copy
+ * Return: pointer to dest
  */
 
-type function_name(int value1)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-        return (0);
+	/*loop throw n +1 with the null byte*/
+	unsigned int i = 0;
+
+	while (i < n)
+	{
+		src[i] = dest[i];
+		i++;
+	}
+	src[i] = '\0';
+	return (dest);
 }
 
