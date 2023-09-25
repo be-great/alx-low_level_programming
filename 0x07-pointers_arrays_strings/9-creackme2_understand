@@ -1,0 +1,5 @@
+idd     : shared library dependencies (to install) 
+	  why : find the dependency and then install them  using apt
+objdump : undertand what is the program do like (it's compare string using strncmp)
+gdb     : debugging in depth , you can run and et breakpoints
+itrace  : to see library program linked with (track the library call)
