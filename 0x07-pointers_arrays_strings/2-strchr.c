@@ -9,7 +9,7 @@
 char *_strchr(char *s, char c)
 {
 
-	char *result;
+	char *result = '\0';
 	/* loop and check for char c*/
 	do {
 		if (*s == c)
