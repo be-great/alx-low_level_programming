@@ -33,7 +33,7 @@ In C, the size of pointers can vary depending on the system's architecture. Here
    - On a 64-bit system, it's typically 8 bytes.
 
 These sizes are based on common system architectures, but remember that they can vary. Understanding pointer sizes is essential for managing memory efficiently in C programs.
-| Task  | Description                                  |
+| file  | Description                                  |
 |----------|----------------------------------------------|
 | 0-memset| `memset` function that fills memory with a constant byte. |
 | Task 2| Your second task description here.          |
