@@ -36,6 +36,10 @@ These sizes are based on common system architectures, but remember that they can
 | File  | Description                                  |
 |----------|----------------------------------------------|
 | 0-memset| `memset` function that fills memory with a constant byte. |
-| 1.memcpy | `memcpy` function that copies memory area.          |
-| Task 3| Your third task description here.           |
+| 1-memcpy | `memcpy` function that copies memory area.          |
+| 2-strchr | `strcpy` function that locates a character in a string  (return the pointer of that)   |
+| 0-memset| `memset` function that fills memory with a constant byte. |
+| 1-memcpy | `memcpy` function that copies memory area.          |
+| 2-strchr | `strcpy` function that locates a character in a string  (return the pointer of that)   |
+
 
