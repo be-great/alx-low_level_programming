@@ -1,12 +1,16 @@
 #include <stdio.h>
 /**
- * function_name - Entry point
- * @value1:
+ * *_strstr - Entry point
+ * @haystack:
+ * @needle:
  * Return: number
  */
 
-type function_name(int value1)
+char *_strstr(char *haystack, char *needle)
 {
-        return (0);
+	char *ptr = NULL;
+
+
+	return (ptr);
 }
 
