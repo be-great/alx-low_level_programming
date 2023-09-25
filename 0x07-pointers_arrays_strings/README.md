@@ -39,7 +39,7 @@ These sizes are based on common system architectures, but remember that they can
 | 1-memcpy | `memcpy` function that copies memory area.          |
 | 2-strchr | `strcpy` function that locates a character in a string  (return the pointer of that)   |
 | 3-strspn | `strspn` function that gets the length of a prefix substring. function scans the string str from the beginning and counts how many consecutive characters at the start of str are also found in charset. It stops counting as soon as it encounters a character that is not in charset or reaches the end of str.|
-| 1-memcpy | `memcpy` function that copies memory area.          |
-| 2-strchr | `strcpy` function that locates a character in a string  (return the pointer of that)   |
+| 4-strpbrk  | `strpbrk` function that searches a string for any of a set of bytes. It searches for the first occurrence of any character from a specified set of characters within a given string and returns a pointer to that character or NULL |
+| 5-strstr  | `strstr` function that locates a substring. The strstr function searches the haystack string for the first occurrence of the needle substring. If the needle is found within the haystack, it returns a pointer to the first character of the first occurrence of the needle or NULL|
 
 
