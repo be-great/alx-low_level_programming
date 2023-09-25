@@ -34,11 +34,11 @@ In C, the size of pointers can vary depending on the system's architecture. Here
 
 These sizes are based on common system architectures, but remember that they can vary. Understanding pointer sizes is essential for managing memory efficiently in C programs.
 | File  | Description                                  |
-|----------|----------------------------------------------|
+|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 0-memset| `memset` function that fills memory with a constant byte. |
 | 1-memcpy | `memcpy` function that copies memory area.          |
 | 2-strchr | `strcpy` function that locates a character in a string  (return the pointer of that)   |
-| 0-memset| `memset` function that fills memory with a constant byte. |
+| 3-strspn | `strspn` function that gets the length of a prefix substring. function scans the string str from the beginning and counts how many consecutive characters at the start of str are also found in charset. It stops counting as soon as it encounters a character that is not in charset or reaches the end of str.|
 | 1-memcpy | `memcpy` function that copies memory area.          |
 | 2-strchr | `strcpy` function that locates a character in a string  (return the pointer of that)   |
 
