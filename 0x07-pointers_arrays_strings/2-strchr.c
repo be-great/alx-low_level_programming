@@ -1,12 +1,24 @@
 #include <stdio.h>
 /**
- * function_name - Entry point
- * @value1:
- * Return: number
+ * *_strchr - function locates a character in a string
+ * @s: string
+ * @c: character to find
+ * Return: pointer to first occurence of c
  */
 
-type function_name(int value1)
+char *_strchr(char *s, char c)
 {
-        return (0);
+
+	char *result;
+	/* loop and check for char c*/
+	do {
+		if (*s == c)
+		{
+			result = s;
+			break;
+		}
+	} while (*s++);
+
+	return (result);
 }
 
