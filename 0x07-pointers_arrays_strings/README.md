@@ -43,4 +43,6 @@ These sizes are based on common system architectures, but remember that they can
 | 5-strstr  | `strstr` function that locates a substring. The strstr function searches the haystack string for the first occurrence of the needle substring. If the needle is found within the haystack, it returns a pointer to the first character of the first occurrence of the needle or NULL|
 | 7-print_chessboard | function that prints the chessboard. how to print 2d_array |
 | 8-print_diagsums | function that prints the sum of the two diagonals of a square matrix of integers. The function passes the pointer of the array so we can only access it using the one-dimension method |
+| 100-set_string | set string by looking at pointer to pointer |
+| 10-crackme2| Crack the exe file by getting the password right.  1- cat crackme2 2- Get the hash before the access denied sentence 3- go to crackstation.net and crack it|
 
