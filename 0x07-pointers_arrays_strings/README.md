@@ -1,5 +1,6 @@
 # What is pointer to pointers :-
-<p> **ptr -> *ptr -> value</p> <br>
+_<p> **ptr -> *ptr -> value_
+
 🗺️ Imagine a pointer as a treasure map, showing you where to find a hidden treasure chest (your data) in a vast desert of memory.
 
 ✨ Now, a pointer to a pointer is like a magical compass that points to multiple treasure maps at once! 🧭✨
