@@ -6,7 +6,7 @@ Recursion is a method where the solution to a problem depends on solutions to sm
 |File|Description|
 |-----------|--------------------------------------|
 |0-puts_recursion|puts function with recursion|
-|1-print_rev_recursion||
+|1-print_rev_recursion|function that prints a string in reverse without newline|
 |2-strlen_recursion||
 |3-factorial||
 |4-pow_recursion||
