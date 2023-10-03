@@ -1,51 +1,38 @@
 #include "main.h"
-
 /**
- * isnumber - check if string of character is number
- * @numbers : the string to check
- * Return: 1 if true else 0
- */
-int isnumber(char numbers[])
-{
-	int i = 0;
-
-	if (numbers[0] == '-')
-		i = 1;
-	while (numbers[i] != '\0')
-	{
-		if (!isdigit(numbers[i]))
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-
-/**
- * main - program that adds positive numbers.
+ * main - program that prints the minimum number
+ * of coins to make change for an amount of money.
  * @argc: number of argument
  * @argv: the argument value
- * Return: 0 always (Success)
+ * Return: 0 success , 1 wrong argument
  */
 int main(int argc, char *argv[])
 {
-	int i;
-	int sum = 0;
+	int cents, coinsneeds = 0;
 
-	if (argc < 2)
+	if (argc < 2 || argc > 2)
 	{
-		printf("0\n");
+		printf("Error\n");
 		return (1);
 	}
-	for (i = 1; i < argc; i++)
+	/*because we have one argument cents*/
+	cents = atoi(argv[1]);
+	/*we have : penny = 1 cents ,, nickel = 5 c*/
+	/* dime = 10 cents , quarter = 25 cents*/
+	while (cents > 0)
 	{
-		if (!isnumber(argv[i]))
-		{
-			printf("Error\n");
-			return (1);
-		}
-		sum += atoi(argv[i]);
+		if (cents >= 25)
+			cents -= 25;
+		else if (cents >= 10)
+			cents -= 10;
+		else if (cents >= 5)
+			cents -= 5;
+		else if (cents >= 2)
+			cents -= 2;
+		else if (cents >= 1)
+			cents -= 1;
+		coinsneeds += 1;
 	}
-	printf("%d\n", sum);
+	printf("%d\n", coinsneeds);
 	return (0);
 }
