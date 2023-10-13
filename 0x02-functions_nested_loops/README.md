@@ -31,5 +31,6 @@ Creating function from scratch: `putchar`, `islower`, `isalpha`, `abs`.
 |104-fibonacci|program that finds and prints the first 98 Fibonacci numbers, starting with 1 and 2, followed by a new line.|
 
 ## Algorithms Notes
-using `%` : to extract the last digit of a number, '/' : to extract the first digit of a number
+- using `%`: to extract the last digit of a number, `/`: to extract the first digit of a number
 example: 12%10 = 2 , 12/10 = 1 "because it's integer"
+- Note in `104-fibonacci` the sequence of the numbers become bigger and bigger and we notice that the `unsigned long` can't fit anymore , so we split the numbers into two part to display it in the O standard function `printf`
