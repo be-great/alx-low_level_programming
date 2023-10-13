@@ -30,4 +30,4 @@
 |102-print_comb5| program that prints all possible combinations of two two-digit numbers.|
 
 # Algorithms notice :
-Each task's writing in ALX depend on the previous task For Example: Task 2 will be simpler to Task 1 just by adding a few additional code.
+Each task's writing in ALX depend on the previous task For Example: Task 2 will be similar to Task 1 just by adding a few additional code.
