@@ -1,15 +1,19 @@
 # 0x00. C - Hello, World
-## General: 
-- creating shell scripts to process `C` file in the different steps of creating the execution file: `preprocessing`, `compile`, `assembly`, `linker`
-- Using basic c functions: `puts`, `printf`, `sizeof`
-- Advanced tasks : searching `gcc` option for different styles `intel syntax`, searching for low-level O function do the same job as `puts` or `printf` 
-## Commands :
-   - gcc
-   - printf (3)
-   - puts
-   - putchar
-## Concepts: 
-- steps taken to create the exe file and simple c code.
+
+## General
+- Creating shell scripts to process `C` files in the different steps of creating the execution file: `preprocessing`, `compile`, `assembly`, `linker`.
+- Using basic C functions: `puts`, `printf`, `sizeof`.
+- Advanced tasks: searching `gcc` options for different styles (e.g., `intel syntax`), searching for low-level C functions that do the same job as `puts` or `printf`.
+
+## Commands
+- `gcc`
+- `printf (3)`
+- `puts`
+- `putchar`
+
+## Concepts
+- Steps taken to create the executable file and simple C code.
+
 | File | Description |
 | --- | --- |
 | 0-preprocessor | A script that runs a C file through the preprocessor and saves the result into another file. |
