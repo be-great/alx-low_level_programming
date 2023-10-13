@@ -11,9 +11,6 @@
 - `puts`
 - `putchar`
 
-## Concepts
-- Steps taken to create the executable file and simple C code.
-
 | File | Description |
 | --- | --- |
 | 0-preprocessor | A script that runs a C file through the preprocessor and saves the result into another file. |
