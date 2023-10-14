@@ -9,8 +9,8 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int carry, i, j, k, len1, len2, bigger;
-	int left, right, temp;
+	int carry, i, j, k, len1, len2, bigger, left, right, temp, digit1, digit2;
+	int sum, resultDigit;
 
 	len1 = 0, len2 = 0, carry = 0;
 	while (n1[len1] != '\0')
@@ -26,27 +26,26 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	i = len1 - 1, j = len2 - 1, k = 0;
 	while (i >= 0 || j >= 0 || carry > 0)
 	{
-		int digit1 = (i >= 0) ? n1[i] - '0' : 0;
-		int digit2 = (j >= 0) ? n2[j] - '0' : 0;
-		int sum = digit1 + digit2 + carry;
-		int resultDigit;
-		
+		/* if we get to case : one number bigger than other*/
+		if (i >= 0)
+			digit1 = n1[i] - '0';
+		else
+			digit1 = 0;
+		if (j >= 0)
+			digit2 = n2[j] - '0';
+		else
+			digit2 = 0;
+		sum = digit1 + digit2 + carry;
 		carry = sum / 10;
 		resultDigit = sum % 10;
 		r[k] = resultDigit + '0';
-		k++;
-		i--;
-		j--;
+		k++, i--, j--;
 	}
-	r[k] = '\0';
-	right = k - 1;
+	r[k] = '\0', right = k - 1;
 	while (left < right)
 	{
-		temp = r[left];
-		r[left] = r[right];
-		r[right] = temp;
-		left++;
-		right--;
+		temp = r[left], r[left] = r[right], r[right] = temp;
+		left++, right--;
 	}
 	return (r);
 }
