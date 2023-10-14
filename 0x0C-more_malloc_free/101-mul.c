@@ -26,11 +26,11 @@ int _isdigit(char *c)
  * @arr: the array
  * Return: the array after init with zeros
  */
-char *initzero(char *arr)
+char *initzero(char *arr, int len)
 {
 	int i;
 
-	for (i = 0; arr[i] != '\0' ; i++)
+	for (i = 0; i < len ; i++)
 	{
 		arr[i] = 0;
 	}
@@ -107,6 +107,7 @@ int main(int argc, char *argv[])
 {
 	char *arr;
 	int len1, len2;
+	int i, j, k, ca, addl,add, lnout;
 	/*argument checks*/
 	if (argc != 3)
 	{
@@ -126,9 +127,38 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (0);
 	}
-	arr = initzero(arr);
+	arr = initzero(arr, (len1 + len2));
 	/* multiply method start by the end*/
-	multiply(argv[1], argv[2], arr);
+	lnout = len1 + len2;
+	k = lnout - 1, i = len1 - 1, j = len2 - 1, ca = addl = 0;
+	for (; k >= 0; k--, i--)
+	{
+		if (i < 0)
+		{
+			if (addl > 0)
+			{
+				add = (arr[k] - '0') + addl;
+				if (add > 9)
+					arr[k - 1] = (add / 10) + '0';
+				arr[k] = (add % 10) + '0';
+			}
+			i = len1 - 1, j--, addl = 0, ca++, k = lnout - (1 + ca);
+		}
+		if (j < 0)
+		{
+			if (arr[0] != '0')
+				break;
+			lnout--;
+			free(arr), arr = malloc(lnout + 1), arr = initzero(arr, lnout);
+			k = lnout - 1, i = len1 - 1, j = len2 - 1, ca = addl = 0;
+		}
+		if (j >= 0)
+		{
+			add = ((argv[1][i] - '0') * (argv[2][j] - '0')) + (arr[k] - '0') + addl;
+			addl = add / 10, arr[k] = (add % 10) + '0';
+		}
+	}
+
 	printf("%s\n", arr);
 	return (0);
 }
