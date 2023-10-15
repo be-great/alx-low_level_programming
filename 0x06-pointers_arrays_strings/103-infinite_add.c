@@ -41,7 +41,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[k] = resultDigit + '0';
 		k++, i--, j--;
 	}
-	r[k] = '\0', right = k - 1;
+	/*r[k] = '\0'*/
+	right = k - 1;
 	while (left < right)
 	{
 		temp = r[left], r[left] = r[right], r[right] = temp;
