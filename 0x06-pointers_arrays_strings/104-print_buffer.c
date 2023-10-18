@@ -85,7 +85,7 @@ void printThestring(int i, char *b, int size)
 		if (b[j] >= 32 && b[j] <= 126)
 			printf("%c", b[j]);
 		else
-			printf(".");
+			printf("%c", '.');
 	}
 
 }
