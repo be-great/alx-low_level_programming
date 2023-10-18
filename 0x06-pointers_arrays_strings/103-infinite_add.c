@@ -23,26 +23,26 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		bigger = len2;
 	if (bigger + 1  >= size_r)
 		return (0);
+	r[bigger + 1] = '\0';
 	i = len1 - 1, j = len2 - 1, k = 0;
 	while (i >= 0 || j >= 0 || carry > 0)
 	{
 		/* if we get to case : one number bigger than other*/
 		if (i >= 0)
-			digit1 = n1[i] - '0';
+			digit1 = n1[i] - 48;
 		else
 			digit1 = 0;
 		if (j >= 0)
-			digit2 = n2[j] - '0';
+			digit2 = n2[j] - 48;
 		else
 			digit2 = 0;
 		sum = digit1 + digit2 + carry;
 		carry = sum / 10;
-		resultDigit = sum % 10;
-		r[k] = resultDigit + '0';
+		resultDigit = sum % 10, r[k] = resultDigit + 48;
 		k++, i--, j--;
 	}
-	/*r[k] = '\0'*/
-	right = k - 1;
+
+	right = k - 1, left = 0;
 	while (left < right)
 	{
 		temp = r[left], r[left] = r[right], r[right] = temp;
