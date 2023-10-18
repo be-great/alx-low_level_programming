@@ -4,6 +4,8 @@
 - strncpy
 - strncat
 - strcat
+
+
 |File | description|
 |---|---|
 |0-strcat|function that concatenates two strings.|
