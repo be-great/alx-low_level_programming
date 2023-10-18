@@ -18,7 +18,7 @@ void print_buffer(char *b, int size)
 	}
 	else
 	{
-		for (i = 0; i <= size; i += 10)
+		for (i = 0; i < size; i += 10)
 		{
 			printmemorybytes(i);
 			printHexvalueofstring(i, b, size);
