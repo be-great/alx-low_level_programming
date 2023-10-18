@@ -11,13 +11,19 @@ void printHexvalueofstring(int i, char *b, int size);
 void print_buffer(char *b, int size)
 {
 	int i = 0;
-
-	for (i = 0; i <= size; i += 10)
+	if (size <= 0)
 	{
-		printmemorybytes(i);
-		printHexvalueofstring(i, b, size);
-		printThestring(i, b, size);
 		printf("\n");
+	}
+	else
+	{
+		for (i = 0; i <= size; i += 10)
+		{
+			printmemorybytes(I);
+			printHexvalueofstring(i, b, size);
+			printThestring(i, b, size);
+			printf("\n");
+		}
 	}
 
 }
