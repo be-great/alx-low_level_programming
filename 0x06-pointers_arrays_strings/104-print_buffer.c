@@ -11,6 +11,7 @@ void printHexvalueofstring(int i, char *b, int size);
 void print_buffer(char *b, int size)
 {
 	int i = 0;
+
 	if (size <= 0)
 	{
 		printf("\n");
@@ -19,7 +20,7 @@ void print_buffer(char *b, int size)
 	{
 		for (i = 0; i <= size; i += 10)
 		{
-			printmemorybytes(I);
+			printmemorybytes(i);
 			printHexvalueofstring(i, b, size);
 			printThestring(i, b, size);
 			printf("\n");
