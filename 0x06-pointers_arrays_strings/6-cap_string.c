@@ -1,53 +1,40 @@
 #include "main.h"
 
 /**
- * checksap - check if letter is saperater
- * @c: char to check
- * Return: 1 if true else 0
- */
-int checksap(char c)
-{
+  * cap_string - this is the main  function
+  *
+  * @str: this is the function parameter of the string
+  *
+  * Return: Void.
+  */
 
-	char sap[] = " \t\n,.!?\"(){}";
-	int i = 0;
-
-	while (i < 12)
-	{
-		if (c == sap[i])
-		{
-			return (1);
-		}
-		i++;
-	}
-	return (0);
-}
-
-/**
- * *cap_string - captialize the first letter of word
- * after a saperater
- * @str: string to capialize
- * Return: string after modify
- */
 char *cap_string(char *str)
+
 {
 
-	int prevoiusvalue = 1;
-	char *ptr = str;
+	int count = 0;
 
-	while (*str)
+	while (str[count])
 	{
-		if (checksap(*str))
-			prevoiusvalue = 1;
-		else if (islower(*str) && prevoiusvalue)
-		{
-			*str -= 32;
-			prevoiusvalue = 0;
-		}
-		else
-			prevoiusvalue = 0;
-
-		str++;
+	while (!(str[count] >= 'a' && str[count] <= 'z'))
+		count++;
+	if (str[count - 1] == ' ' ||
+	str[count - 1] == '\t' ||
+	str[count - 1] == '\n' ||
+	str[count - 1] == ',' ||
+	str[count - 1] == ';' ||
+	str[count - 1] == '.' ||
+	str[count - 1] == '!' ||
+	str[count - 1] == '?' ||
+	str[count - 1] == '"' ||
+	str[count - 1] == '(' ||
+	str[count - 1] == ')' ||
+	str[count - 1] == '{' ||
+	str[count - 1] == '}' ||
+	count == 0)
+	str[count] -= 32;
+	count++;
 	}
-	return (ptr);
+	return (str);
 
 }
