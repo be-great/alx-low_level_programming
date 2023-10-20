@@ -2,10 +2,11 @@
 /**
  * *_strpbrk - function that searches a string for
  *  any of a set of bytes.
- *  Description: seatch
+ *  Description: function locates the first occurrence in the string s
+ *  of any of the bytes in the string accept
  *  @s: the string
  *  @accept: the charcter are accepted (the set of bytes)
- *  Return: pointer to start that matche of the byte
+ *  Return: pointer to start that match of the byte or NULL if not found
  */
 
 char *_strpbrk(char *s, char *accept)

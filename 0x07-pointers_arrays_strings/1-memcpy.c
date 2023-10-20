@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * *_memcpy - Entry point
+ * *_memcpy - copies memory area
  * @dest: to
  * @src: from
  * @n: number of bytes to copy
