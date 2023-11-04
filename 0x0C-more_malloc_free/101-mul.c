@@ -1,121 +1,169 @@
-#include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
 
 /**
- * _is_there_zero - determines if any number is zero
- * @argv: the arguments values.
+ * _isnumber - Check if string only contains digits.
+ * @numbers: The string to check.
+ * Return: 1 if the string contains all digits, else 0.
  */
-void _is_there_zero(char *argv[])
-{
-	int i, isn1 = 1, isn2 = 1;
-
-	for (i = 0; argv[1][i]; i++)
-		if (argv[1][i] != '0')
-		{
-			isn1 = 0;
-			break;
-		}
-
-	for (i = 0; argv[2][i]; i++)
-		if (argv[2][i] != '0')
-		{
-			isn2 = 0;
-			break;
-		}
-
-	if (isn1 == 1 || isn2 == 1)
-	{
-		printf("0\n");
-		exit(0);
-	}
-}
-
-/**
- * _initialize_array - init array with zeros
- * @arr: The array.
- * @length: length.
- * Return: pointer to the init array.
- */
-char *_initialize_array(char *arr, int length)
+int _isnumber(char numbers[])
 {
 	int i = 0;
 
-	for (i = 0; i < length; i++)
-		arr[i] = '0';
-	arr[length] = '\0';
-	return (arr);
+	if (numbers[0] == '-')
+		i = 1;
+
+	while (numbers[i] != '\0')
+	{
+		if (!isdigit(numbers[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 /**
- * _checknum - check the length of the number and
- * that is a digit not a not number value
- * @argv: arguments list value
- * @n: rows values.
- * Return: length of the number.
+ * _strlen - Return the length of the given string.
+ * @s: String to check.
+ * Return: The length of the given string.
  */
-int _checknum(char *argv[], int n)
+int _strlen(char *s)
 {
-	int len;
+	int count = 0;
 
-	for (len = 0; argv[n][len]; len++)
-		if (!isdigit(argv[n][len]))
-		{
-			printf("Error\n");
-			exit(98);
-		}
-
-	return (len);
+	while (*s)
+	{
+		count++;
+		s++;
+	}
+	return (count);
 }
 
 /**
- * main - The Entry point.
- * discription: a program that multiplies two positive numbers.
- * @argc: number of arguments.
- * @argv: arguments list.
- * Return: 0 always (Success)
+ * _calloc - Function that allocates memory for an array using malloc.
+ * Description: Creating a calloc function to allocate memory spaces
+ * with initialized values of 0, not random values like malloc.
+ * @nmemb: Number of array elements.
+ * @size: Size of the array elements value.
+ * Return: Pointer to the new allocated memory.
+ */
+void *_calloc(unsigned int nmemb, unsigned int size)
+{
+	char *ptr;
+	int len;
+	int i = 0;
+
+	if (nmemb <= 0 || size <= 0)
+		return (NULL);
+
+	ptr = malloc(nmemb * size);
+
+	if (ptr == NULL)
+		return (NULL);
+
+	len = nmemb * size;
+
+	while (i < len)
+	{
+		ptr[i] = 0;
+		i++;
+	}
+	return (ptr);
+}
+
+/**
+ * rev_array - Function that reverses the content of an array of integers.
+ * @a: The array.
+ * @n: Number of elements of the array.
+ */
+void rev_array(char *a, int n)
+{
+	int start = 0;
+	int end = n - 1;
+	int temp;
+
+	while (start < end)
+	{
+		temp = a[start];
+		a[start] = a[end];
+		a[end] = temp;
+		start++;
+		end--;
+	}
+}
+
+/**
+ * convertArrayToString - Convert the array to string.
+ * @arr_0: The array.
+ * @lout: Length of the array.
+ * @arr_1: The resulting array.
+ */
+void convertArrayToString(int *arr_0, int lout, char *arr_1)
+{
+	int index = 0;
+	int j;
+
+	for (j = lout; j >= 0; j--)
+	{
+		if (arr_0[j] != 0 || index > 0)
+			arr_1[index++] = arr_0[j] + '0';
+	}
+
+	if (index == 0)
+		arr_1[index++] = '0';
+
+	arr_1[index] = '\0';
+}
+
+/**
+ * main - Entry point
+ * Description: Program that multiplies two positive numbers
+ * using infinite multiplication.
+ * @argc: Number of arguments.
+ * @argv: Arguments list.
+ * Return: 0 always (Success).
  */
 int main(int argc, char *argv[])
 {
-	int len1, len2, lnout, add, addl, i, j, k, ca;
-	char *nout;
+	int check0, check1, len1, len2, lout, i, j, *arr_0, product;
+	char *arr_1;
+	char *num0 = argv[1];
+	char *num1 = argv[2];
 
 	if (argc != 3)
 		printf("Error\n"), exit(98);
-	len1 = _checknum(argv, 1), len2 = _checknum(argv, 2);
-	_is_there_zero(argv), lnout = len1 + len2, nout = malloc(lnout + 1);
-	if (nout == NULL)
+	check0 = _isnumber(argv[1]), check1 = _isnumber(argv[2]);
+	if (!check0 || !check1)
 		printf("Error\n"), exit(98);
-	nout = _initialize_array(nout, lnout), k = lnout - 1;
-	i = len1 - 1, j = len2 - 1, ca = addl = 0;
-	for (; k >= 0; k--, i--)
+	/* Max result number length = len1 + len2 + 1 */
+	len1 = _strlen(argv[1]), len2 = _strlen(argv[2]);
+	lout = len1 + len2;
+	arr_0 = _calloc(sizeof(int), lout + 1);
+	arr_1 = _calloc(sizeof(char), lout + 1);
+	if (arr_0 == NULL || arr_1 == NULL)
 	{
-		if (i < 0)/*The number two is larger than the other one*/
+		printf("Error\n");
+		exit(98);
+	}
+	/******Multiplication algorithm******/
+	/* ##1- reverse the strings */
+	rev_array(num0, len1), rev_array(num1, len2);
+	/* ##2- multiple digit by digit and adding previous values */
+	for (i = 0; i < len1; i++)
+	{
+		for (j = 0; j < len2; j++)
 		{
-			if (addl > 0)
+			product = (num0[i] - '0') * (num1[j] - '0') + arr_0[i + j];
+			arr_0[i + j] = product % 10;
+			if (i + j + 1 < lout)
 			{
-				add = (nout[k] - '0') + addl;
-				if (add > 9)
-					nout[k - 1] = (add / 10) + '0';
-				nout[k] = (add % 10) + '0';
+				arr_0[i + j + 1] += product / 10;
 			}
-			i = len1 - 1, j--, addl = 0, ca++, k = lnout - (1 + ca);
-		}
-		if (j < 0)/*The number one is larger than the number two*/
-		{
-			if (nout[0] != '0')
-				break;
-			lnout--;
-			free(nout), nout = malloc(lnout + 1), nout = _initialize_array(nout, lnout);
-			k = lnout - 1, i = len1 - 1, j = len2 - 1, ca = addl = 0;
-		}
-		if (j >= 0)
-		{
-			add = ((argv[1][i] - '0') * (argv[2][j] - '0')) + (nout[k] - '0') + addl;
-			addl = add / 10, nout[k] = (add % 10) + '0';
 		}
 	}
-	printf("%s\n", nout);
+	/* Convert to string */
+	convertArrayToString(arr_0, lout, arr_1);
+	printf("%s\n", arr_1), free(arr_0), free(arr_1);
 	return (0);
 }
