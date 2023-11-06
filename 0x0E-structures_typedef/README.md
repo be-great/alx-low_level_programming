@@ -10,7 +10,7 @@
     - age, type = float
     - owner, type = char * |
 |1-init_dog|function that initialize a variable of type struct dog|
-|||
+|2-print_dog|function that prints a struct dog|
 |||
 |||
 |||
