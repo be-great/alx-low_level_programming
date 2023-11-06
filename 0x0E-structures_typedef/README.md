@@ -13,7 +13,7 @@
 |2-print_dog|function that prints a struct dog|
 |dog.h|Define a new type dog_t as a new name for the type struct dog. `typedef`|
 |4-new_dog|function that creates a new dog.|
-|||
+|5-free_dog|function that frees dogs.|
 
 
 ## Command Run:-
