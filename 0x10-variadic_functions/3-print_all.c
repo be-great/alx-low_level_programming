@@ -12,7 +12,7 @@ void print_all(const char * const format, ...)
 	char specefier[4] = "cifs", *ch;
 
 	va_start(args, format);
-	while (format[i])
+	while (format && format[i])
 	{
 		j = 0;
 		while (specefier[j])
