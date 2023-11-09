@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 /**
- * main - check the code for ALX students.
- * @argc: argument count.
- * @argv: argument vector.
- *
- * Return: Always 0.
+ * main - Entry point
+ * Description: program that prints the opcodes of its own main function.
+ * @argc: argument number.
+ * @argv: argument list.
+ * Return: 0 Always (Success)
  */
 int main(int argc, char *argv[])
 {
