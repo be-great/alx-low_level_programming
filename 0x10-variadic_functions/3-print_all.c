@@ -8,40 +8,43 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i = 0, j;
-
-	char arglist[4] = "cifs";
-
-	char specefier[4];
-
-	int *ch;
+	int i = 0, j, check = 0;
+	char specefier[4] = "cifs", *ch;
 
 	va_start(args, format);
 	while (format[i])
 	{
 		j = 0;
-		/*check if format is right*/
-		while (arglist[j])
+		while (specefier[j])
 		{
-			if (arglist[j] == format[i])
+			if (format[i] == specefier[j] && check == 1)
 			{
-				ch = va_arg(args, int *);
+				printf(", ");
+				break;
+			}
+				j++;
+		}
+		switch (format[i])
+		{
+			case 'c':
+				printf("%c", va_arg(args, int)), check = 1;
+				break;
+			case 'i':
+				printf("%i", va_arg(args, int)), check = 1;
+				break;
+			case 'f':
+				printf("%f", va_arg(args, double)), check = 1;
+				break;
+			case 's':
+				ch = va_arg(args, char*);
 				if (ch == NULL)
 				{
 					printf("(nil)");
 					break;
 				}
-				specefier[0] = '%';
-				specefier[1] = format[i];
-				specefier[2] = ',';
-				specefier[3] = ' ';
-				printf(specefier, ch);
+				printf("%s", ch), check = 1;
 				break;
-			}
-			j++;
-		}
-		i++;
+		} i++;
 	}
-	printf("\n");
-
+	printf("\n"), va_end(args);
 }
