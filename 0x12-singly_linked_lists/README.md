@@ -40,8 +40,8 @@ Singly Linked Lists
 |2-add_node|function that add a new node at the beginning of a list_t list.|
 |3-add_node_end|function that adds a new node at the end of a list_t list.|
 |4-free_list|function that frees a list_t list|
-|100-first||
-|101-hello_holberton.asm||
+|100-first|function that prints string before the main function is executed.|
+|101-hello_holberton.asm| a 64-bit program in assembly that prints Hello, Holberton, followed by a new line.|
 # Compile command 
 Each task number is assocaite with a test case file on the tests folder.
 
