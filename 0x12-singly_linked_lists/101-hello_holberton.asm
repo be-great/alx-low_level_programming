@@ -2,14 +2,14 @@
         extern  printf
 
         section .data
-msg:    db      "Hello, Holberton", 10, 0   ;
+msg:    db      "Hello, Holberton", 0
+format:	db "%s", 10, 0
         section .text
 main:
-        push    rbx                     ; we have to save rbx
+        mov     esi, msg                   ; set paramerter (msg)
+        mov     edi, format                ; set format (%s)
+        mov     eax, 0                     ; because printf is var args
+        call    printf                     ; system call printf(format, msg)
 
-        mov     rdi, msg                ; set parameter (msg)
-        xor     rax, rax                ; because printf is var args
-        call    printf                  ; printf(msg)
-
-        pop     rbx                     ; restore rbx before returning
+        mov     eax, 0                     ; reset eax
         ret
