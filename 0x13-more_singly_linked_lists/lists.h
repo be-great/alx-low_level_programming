@@ -17,15 +17,15 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 /**
- * struct listp_s - singly linked list
+ * struct list_p - singly linked list
  * @p: pointer of the node
  * @next: points to the next node
  */
-typedef struct listp_s
+typedef struct list_p
 {
 	void *p;
-	struct listp_s *next;
-} listp_t;
+	struct list_p *next;
+} listp;
 
 listint_t *add_nodeint(listint_t **head, const int n);
 
