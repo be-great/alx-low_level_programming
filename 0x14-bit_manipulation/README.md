@@ -8,6 +8,6 @@
 |---|---|
 | 0-binary_to_uint | function that converts a binary number to an unsigned int|
 |||
-|||
+|2-get_bit|Get the bit object|
 |||
 |||
