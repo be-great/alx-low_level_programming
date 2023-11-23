@@ -20,6 +20,9 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 			size++;
 		}
 	}
+	/* prev = null : check if the node is empty we can't delete anything*/
+	/* prev->next and index = 0 : check the end of the node and index is larger*/
+	/* than the number of element on the linked list*/
 	if (prev == NULL || (prev->next == NULL && index != 0))
 		return (-1);
 	next = prev->next;

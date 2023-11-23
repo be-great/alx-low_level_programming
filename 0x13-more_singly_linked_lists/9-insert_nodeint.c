@@ -30,14 +30,17 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			size++;
 		}
 	}
+	/* you didn't found index= 9 and you node have 5 element for Example*/
 	if (tempnode == NULL && idx != 0)
 		return (NULL);
 	newnode->n = n;
+	/* if index is the first element*/
 	if (idx == 0)
 	{
 		newnode->next = *head;
 		*head = newnode;
 	}
+	/* else for other index 1,2,...etc*/
 	else
 	{
 		newnode->next = tempnode->next;
