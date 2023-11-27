@@ -17,7 +17,7 @@ void error_handler(int *fd_from, int *fd_to, char *file1, char *file2)
 	if (*fd_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file2);
-		exit(98);
+		exit(99);
 	}
 
 }
@@ -45,17 +45,17 @@ void error_close_handler(int *fd_from, int *fd_to)
 /**
 * main - Entry point
 * Description: program that copies the content of a file to another file.
-* @ac: number of argument passed
+* @argc: number of argument passed
 * @argv: list of the argument
 * Return: 0 Always (Success)
 */
-int main(int ac, char *argv[])
+int main(int argc, char *argv[])
 {
 	int fd_to, fd_from;
 	char buffer[1024];
 	size_t bytes_read, bytes_written;
 
-	if (ac != 3)
+	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
