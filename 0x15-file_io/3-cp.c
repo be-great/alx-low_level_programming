@@ -72,16 +72,12 @@ int main(int ac, char *argv[])
 		if (bytes_read == (size_t)-1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-			close(fd_from);
-			close(fd_to);
 			exit(98);
 		}
 		bytes_written = write(fd_to, buffer, bytes_read);
 		if (bytes_written == (size_t)-1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			close(fd_from);
-			close(fd_to);
 			exit(99);
 		}
 	}
