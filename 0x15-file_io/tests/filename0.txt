@@ -1,0 +1,11 @@
+Usage: alxcheck -D <dir_name> -H <header_name>.h
+
+Example: alxcheck -D . -H main.h
+
+This command will check all prototypes in the specified directory for C files. 🕵️‍♂️
+
+Requirements:
+- Install ctags: sudo apt-get install exuberant-ctags 🛠️
+- Ensure correct function prototypes in C files; for example, the open bracket should be in Betty style on a different line:
+  Example: `int function(void){}` ❌ | `int function(void) ✔
+                                    | `{        }` 

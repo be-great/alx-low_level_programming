@@ -1,0 +1,94 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+void writeToFile() {
+    // Open a file for writing
+    int fd = open("example.txt", O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
+    if (fd == -1) {
+        perror("Error opening file for writing");
+        exit(EXIT_FAILURE);
+    }
+
+    // Write data to the file
+    const char *data = "Hello, World!";
+    ssize_t bytes_written = write(fd, data, strlen(data));
+    if (bytes_written == -1) {
+        perror("Error writing to file");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+
+    // Close the file
+    if (close(fd) == -1) {
+        perror("Error closing file");
+        exit(EXIT_FAILURE);
+    }
+
+    printf("Write to file completed successfully.\n");
+}
+
+void readFromFile() {
+    // Open the file for reading
+    int fd = open("example.txt", O_RDONLY);
+    if (fd == -1) {
+        perror("Error opening file for reading");
+        exit(EXIT_FAILURE);
+    }
+
+    // Read data from the file
+    char buffer[20];
+    ssize_t bytes_read = read(fd, buffer, sizeof(buffer) - 1);
+    if (bytes_read == -1) {
+        perror("Error reading from file");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+    buffer[bytes_read] = '\0';  // Null-terminate the string
+
+    // Print the read data
+    printf("Read from file: %s\n", buffer);
+
+    // Close the file
+    if (close(fd) == -1) {
+        perror("Error closing file");
+        exit(EXIT_FAILURE);
+    }
+}
+
+void displayWithDprintf() {
+    // Open the file for reading
+    int fd = open("example.txt", O_RDONLY);
+    if (fd == -1) {
+        perror("Error opening file for reading");
+        exit(EXIT_FAILURE);
+    }
+
+    // Read data from the file and display using dprintf
+    char buffer[20];
+    ssize_t bytes_read = read(fd, buffer, sizeof(buffer) - 1);
+    if (bytes_read == -1) {
+        perror("Error reading from file");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+    buffer[bytes_read] = '\0';  // Null-terminate the string
+
+    // Display using dprintf
+    dprintf(STDOUT_FILENO, "Display with dprintf: %s\n", buffer);
+
+    // Close the file
+    if (close(fd) == -1) {
+        perror("Error closing file");
+        exit(EXIT_FAILURE);
+    }
+}
+
+int main() {
+    writeToFile();
+    readFromFile();
+    displayWithDprintf();
+
+    return 0;
+}
