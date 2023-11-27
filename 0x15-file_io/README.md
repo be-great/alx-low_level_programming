@@ -23,7 +23,7 @@
 * the POSIX standard output. POSIX =read(STDIN_FILENO, ... vs read(0, ...)| 
 |1- reate_file  | function that create a file|
 |2-append_text_to_file|function that appends text at the end of a file. |
-|3-cp| |
+|3-cp|program that copies the content of a file to another file.|
 
 ## Run
 
