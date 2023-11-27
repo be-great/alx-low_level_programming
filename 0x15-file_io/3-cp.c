@@ -31,13 +31,13 @@ void error_close_handler(int *fd_from, int *fd_to)
 {
 	if (close(*fd_from) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", *fd_from);
-		exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", *fd_from);
+		exit(100);
 	}
 	if (close(*fd_to) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", *fd_to);
-		exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", *fd_to);
+		exit(100);
 	}
 
 
@@ -74,7 +74,7 @@ int main(int ac, char *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			close(fd_from);
 			close(fd_to);
-			exit(99);
+			exit(98);
 		}
 		bytes_written = write(fd_to, buffer, bytes_read);
 		if (bytes_written == (size_t)-1)
