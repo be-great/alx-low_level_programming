@@ -16,7 +16,7 @@ void error_handler(int *fd_from, int *fd_to, char *file1, char *file2)
 	}
 	if (*fd_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file2);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file2);
 		exit(98);
 	}
 
@@ -52,9 +52,7 @@ void error_close_handler(int *fd_from, int *fd_to)
 int main(int ac, char *argv[])
 {
 	int fd_to, fd_from;
-
 	char buffer[1024];
-
 	size_t bytes_read, bytes_written;
 
 	if (ac != 3)
@@ -72,12 +70,16 @@ int main(int ac, char *argv[])
 		if (bytes_read == (size_t)-1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			close(fd_from);
+			close(fd_to);
 			exit(98);
 		}
 		bytes_written = write(fd_to, buffer, bytes_read);
 		if (bytes_written == (size_t)-1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			close(fd_from);
+			close(fd_to);
 			exit(99);
 		}
 	}
