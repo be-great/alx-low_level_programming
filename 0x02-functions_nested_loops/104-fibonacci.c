@@ -37,17 +37,12 @@ int main(void)
 			left += 1;
 			right %= 10000000000;
 		}
-
 		printf("%lu%lu", left, right);
 		if (count != 98)
 			printf(", ");
-
-		fi1_left = fi2_left;
-		fi1_right = fi2_right;
-		fi2_left = left;
-		fi2_right = right;
+		fi1_left = fi2_left, fi1_right = fi2_right;
+		fi2_left = left, fi2_right = right;
 		count++;
-	}
-	printf("\n");
+	} printf("\n");
 	return (0);
 }
