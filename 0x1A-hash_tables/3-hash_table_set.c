@@ -20,8 +20,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	/*check if key already exist*/
-	nodes = ht->array[0];
 	size = ht->size;
+	index = key_index((unsigned char *)key, size);
+	nodes = ht->array[index];
 
 	while (nodes != NULL)
 	{
@@ -43,7 +44,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			return (0);
 		new_node->key = (char *) key;
 		new_node->value = (char *) value;
-		index = key_index((unsigned char *)key, size);
 		prev = ht->array[index];
 		new_node->next = prev;
 		ht->array[index] = new_node;
