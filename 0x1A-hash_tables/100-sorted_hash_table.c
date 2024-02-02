@@ -216,21 +216,28 @@ void shash_table_print(const shash_table_t *ht)
 void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *node0;
-	char *sep;
+	int i = 0;
 
 	if (ht == NULL)
 		return;
 
 	printf("{");
-	sep = "";
 
 	node0 = ht->stail;
 
-	while (node0 != NULL)
+	while (node0)
 	{
-		printf("%s'%s': '%s'", sep, node0->key, node0->value);
-		sep = ", ";
+		if (i == 0)
+		{
+			printf("'%s': '%s'", node0->key, node0->value);
+		}
+		else
+		{
+			printf(", ");
+			printf("'%s': '%s'", node0->key, node0->value);
+		}
 		node0 = node0->sprev;
+		i = 1;
 	}
 
 	printf("}\n");
