@@ -183,26 +183,24 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *nodes;
-	unsigned long int i;
+	unsigned long int i = 0;
 
 	if (!ht)
 		return;
 
 	putchar('{');
-	for (i = 0; i < ht->size; i++)
+	nodes = ht->shead;
+	while (nodes != NULL)
 	{
-		nodes = ht->array[i];
-		while (nodes != NULL)
+		if (i == 0)
+			printf("'%s': '%s'", nodes->key, nodes->value);
+		else
 		{
-			if (i == 0)
-				printf("'%s': '%s'", nodes->key, nodes->value);
-			else
-			{
-				printf(", ");
-				printf("'%s': '%s'", nodes->key, nodes->value);
-			}
-			nodes = nodes->next;
+			printf(", ");
+			printf("'%s': '%s'", nodes->key, nodes->value);
 		}
+		nodes = nodes->snext;
+		i = 1;
 	}
 	putchar('}');
 	putchar('\n');
@@ -239,9 +237,9 @@ void shash_table_print_rev(const shash_table_t *ht)
 }
 
 /**
- * shash_table_delete - function that deletes a hash table
- * @ht: is the hash table
- */
+* shash_table_delete - function that deletes a hash table
+* @ht: is the hash table
+*/
 
 void shash_table_delete(shash_table_t *ht)
 {
