@@ -32,7 +32,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/*update value if it already exist*/
 	if (nodes != NULL)
 	{
-		nodes->value = (char *) value;
+		free(nodes->value);
+		nodes->value = strdup(value);
 	}
 	/*add newnode if doesn't exist*/
 	else
