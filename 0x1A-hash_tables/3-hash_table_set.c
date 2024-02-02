@@ -10,30 +10,41 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-    hash_node_t *nodes;
+	hash_node_t *nodes, *new_node;
+	hash_node_t *prev;
+	unsigned long int size, index;
+
 	/*check if argument not null or empty*/
 
 	if (!ht || !key || !value)
 		return (0);
 
 	/*check if key already exist*/
-    nodes = ht->array[0];
-    while (nodes != NULL)
-    {
-        if (strcmp(nodes->key,key) == 0)
-            break;
-        nodes = nodes->next;
-    }
+	nodes = ht->array[0];
+	size = ht->size;
+
+	while (nodes != NULL)
+	{
+		if (strcmp(nodes->key, key) == 0)
+			break;
+		nodes = nodes->next;
+	}
 	/*update value if it already exist*/
-    if (nodes != NULL)
-    {
-        nodes->value = value;
-        printf("found it");
-    }
+	if (nodes != NULL)
+	{
+		nodes->value = (char *) value;
+	}
 	/*add newnode if doesn't exist*/
-    else
-    {
-        printf("Not found it");
-    }
-    return (0);
+	else
+	{
+		new_node = malloc(sizeof(hash_node_t *));
+		new_node->key = (char *) key;
+		new_node->value = (char *) value;
+		index = key_index((unsigned char *)key, size);
+		prev = ht->array[index];
+		new_node->next = prev;
+		ht->array[index] = new_node;
+
+	}
+	return (1);
 }
