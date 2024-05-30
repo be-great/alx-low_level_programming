@@ -4,7 +4,7 @@ island perimeter
 water if above == 0 or we are the begining of the array
 water if blow == 0 or we are the end of the array
 water if right == 0 or we are the begining of the column
-water if left == 0 or we are the end of the column 
+water if left == 0 or we are the end of the column
 """
 
 
@@ -13,7 +13,7 @@ def island_perimeter(grid):
     count = 0
     rows = len(grid)
     cols = len(grid[0])
-    
+
     for i in range(rows):
         for j in range(cols):
             if grid[i][j] == 1:
@@ -30,4 +30,3 @@ def island_perimeter(grid):
                 if j == cols - 1 or grid[i][j + 1] == 0:
                     count += 1
     return count
-
