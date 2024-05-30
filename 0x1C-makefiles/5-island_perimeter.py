@@ -9,22 +9,25 @@ water if left == 0 or we are the end of the column
 
 
 def island_perimeter(grid):
-    """The island perimeter"""
+    """Calculate the perimeter of the island in the grid."""
     count = 0
-    for i in range(len(grid)):
-            for j in range(len(grid[i])):
-                if (grid[i][j] == 1):
-                    # above
-                    if (i == 0 or grid[i - 1][j] == 0):
-                        count += 1
-                    # blow
-                    if (i == len(grid[i]) - 1 or grid[i + 1][j] == 0):
-                        count += 1
-                    # check left
-                    if (j == 0 or grid[i][j - 1] == 0):
-                        count += 1
-                    # check right
-                    if (j == len(grid[i]) - 1 or grid[i][j + 1]):
-                        count += 1        
-    return (count)
+    rows = len(grid)
+    cols = len(grid[0])
+    
+    for i in range(rows):
+        for j in range(cols):
+            if grid[i][j] == 1:
+                # above
+                if i == 0 or grid[i - 1][j] == 0:
+                    count += 1
+                # below
+                if i == rows - 1 or grid[i + 1][j] == 0:
+                    count += 1
+                # left
+                if j == 0 or grid[i][j - 1] == 0:
+                    count += 1
+                # right
+                if j == cols - 1 or grid[i][j + 1] == 0:
+                    count += 1
+    return count
 
