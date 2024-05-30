@@ -7,6 +7,7 @@ water if right == 0 or we are the begining of the column
 water if left == 0 or we are the end of the column 
 """
 
+
 def island_perimeter(grid):
     """The island perimeter"""
     count = 0
@@ -24,11 +25,6 @@ def island_perimeter(grid):
                         count += 1
                     # check right
                     if (j == len(grid[i]) - 1 or grid[i][j + 1]):
-                        count += 1
-        
+                        count += 1        
     return (count)
-
-
-
-
 
