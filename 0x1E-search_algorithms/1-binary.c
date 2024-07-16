@@ -10,35 +10,35 @@
  */
 int divide(int *array, int low, int high, int value)
 {
-    int mid;
-    int i;
+	int mid;
+	int i;
 
-    printf("Searching in array: ");
-    for (i = low; i <= high; i++)
-    {
-        if (i < high)
-            printf("%i, ", array[i]);
-        else
-            printf("%i\n", array[i]);
-    }
-    if (!array || low >= high)
-        return (-1);
-    mid = low + (high - low)/2;
-    
-    if (array[mid] == value)
-        return (mid);
-    if (value < array[mid])
-    {
-        /*go left*/
-        return divide(array, low, mid - 1, value);
-    }
-    else
-    {
-        /*go right*/
-        return divide(array, mid + 1, high, value);
-    }
+	printf("Searching in array: ");
+	for (i = low; i <= high; i++)
+	{
+		if (i < high)
+			printf("%i, ", array[i]);
+		else
+			printf("%i\n", array[i]);
+	}
+	if (!array || low > high)
+		return (-1);
+	mid = low + (high - low) / 2;
 
+	if (array[mid] == value)
+		return (mid);
+	if (value < array[mid])
+	{
+		/* go left */
+		return (divide(array, low, mid - 1, value));
+	}
+	else
+	{
+		/* go right */
+		return (divide(array, mid + 1, high, value));
+	}
 }
+
 /**
  * binary_search - binary search algorithm
  * @array: the array
@@ -48,8 +48,8 @@ int divide(int *array, int low, int high, int value)
  */
 int binary_search(int *array, size_t size, int value)
 {
-    int index;
+	int index;
 
-    index = divide(array, 0, size - 1, value);
-    return (index);
+	index = divide(array, 0, size - 1, value);
+	return (index);
 }
