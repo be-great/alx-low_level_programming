@@ -13,6 +13,8 @@ int divide(int *array, int low, int high, int value)
 	int mid;
 	int i;
 
+	if (!array || low > high)
+		return (-1);
 	printf("Searching in array: ");
 	for (i = low; i <= high; i++)
 	{
@@ -21,8 +23,6 @@ int divide(int *array, int low, int high, int value)
 		else
 			printf("%i\n", array[i]);
 	}
-	if (!array || low > high)
-		return (-1);
 	mid = low + (high - low) / 2;
 
 	if (array[mid] == value)
